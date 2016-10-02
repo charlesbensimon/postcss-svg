@@ -68,10 +68,6 @@ class SVGImage
       transform = (key) -> "(it['[#{key}]'] ? '#{key}:'+it['[#{key}]']+';' : '')"
       doc.setAttribute('style', "{{= #{_.map(['fill', 'stroke'], transform).join('+')} }}")
 
-    unless @svgAttributes.height || @svgAttributes.width
-      doc.setAttribute('height', "{{= it['[height]'] || it['[size]'] || '100%' }}")
-      doc.setAttribute('width', "{{= it['[width]'] || it['[size]'] || '100%' }}")
-
   _parseNode: (node, result, callback, path='') ->
     if node.childNodes
       for node in node.childNodes
