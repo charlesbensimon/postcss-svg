@@ -116,10 +116,6 @@
         };
         doc.setAttribute('style', "{{= " + (_.map(['fill', 'stroke'], transform).join('+')) + " }}");
       }
-      if (!(this.svgAttributes.height || this.svgAttributes.width)) {
-        doc.setAttribute('height', "{{= it['[height]'] || it['[size]'] || '100%' }}");
-        return doc.setAttribute('width', "{{= it['[width]'] || it['[size]'] || '100%' }}");
-      }
     };
 
     SVGImage.prototype._parseNode = function(node, result, callback, path) {
